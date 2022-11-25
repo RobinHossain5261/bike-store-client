@@ -9,7 +9,8 @@
         "name": "Roni Hossain",
         "location": "Pabna",
         "phone": "01754112230",
-        "date": "26-11-22"
+        "date": "26-11-22",
+        "brand": "bajaj"
     },
     {
         "_id": 2,
@@ -21,7 +22,8 @@
         "name": "Rohim Hossain",
         "location": "Dhaka",
         "phone": "01724112238",
-        "date": "28-11-22"
+        "date": "28-11-22",
+        "brand": "bajaj"
     },
     {
         "_id": 3,
@@ -33,6 +35,7 @@
         "name": "Bappy Dawan",
         "location": "Comilla",
         "phone": "01744112237",
-        "date": "29-11-22"
+        "date": "29-11-22",
+        "brand": "bajaj"
     }
 ]

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-const Yahama = () => {
+const Bajaj = () => {
     const [hondaOptions, setHondaOptions] = useState([]);
     useEffect(() => {
-        fetch('yamaha.json')
+        fetch('bajaj.json')
             .then(res => res.json())
             .then(data => setHondaOptions(data))
     }, [])
     return (
         <div className='mt-10'>
-            <h1 className="text-2xl font-bold mb-5">Yamaha</h1>
+            <h1 className="text-2xl font-bold mb-5">Bajaj</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                 {
                     hondaOptions.map(option =>
@@ -27,7 +27,7 @@ const Yahama = () => {
                                     <h4 className="text-xl">Name: {option.name}</h4>
                                     <p>Address: {option.location}</p>
                                     <p>Phone-Number: {option.phone}</p>
-                                    <button className="btn btn-primary mt-2">Buy Now</button>
+                                    <button className="btn btn-primary mt-2">Book Now</button>
                                 </div>
                             </div>
                         </div>
@@ -39,4 +39,4 @@ const Yahama = () => {
     );
 };
 
-export default Yahama;
+export default Bajaj;

@@ -27,7 +27,7 @@ const Honda = () => {
                                     <h4 className="text-xl">Name: {option.name}</h4>
                                     <p>Address: {option.location}</p>
                                     <p>Phone-Number: {option.phone}</p>
-                                    <button className="btn btn-primary mt-2">Buy Now</button>
+                                    <button className="btn btn-primary mt-2">Book Now</button>
                                 </div>
                             </div>
                         </div>
