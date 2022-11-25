@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 1,
+        "productName": "Bajaj Pulsar 150 ABS",
+        "image": "https://www.banglamotor.net/images/bajaj/bajaj-pulsar-150-abs-002.jpg",
+        "price": "215000",
+        "resalePrice": "170000",
+        "usingTime": "6 month",
+        "name": "Roni Hossain",
+        "location": "Pabna",
+        "phone": "01754112230",
+        "date": "26-11-22"
+    },
+    {
+        "_id": 2,
+        "productName": "Bajaj Pulsar NS160 ABS",
+        "image": "https://www.banglamotor.net/images/bajaj/bajaj-ns160abs-img02.jpg",
+        "price": "255000",
+        "resalePrice": "170000",
+        "usingTime": "8 month",
+        "name": "Rohim Hossain",
+        "location": "Dhaka",
+        "phone": "01724112238",
+        "date": "28-11-22"
+    },
+    {
+        "_id": 3,
+        "productName": "Bajaj Discover 110",
+        "image": "https://www.banglamotor.net/images/bajaj/bajaj-discover-110-img3.jpg",
+        "price": "132000",
+        "resalePrice": "90000",
+        "usingTime": "12 month",
+        "name": "Bappy Dawan",
+        "location": "Comilla",
+        "phone": "01744112237",
+        "date": "29-11-22"
+    }
+]

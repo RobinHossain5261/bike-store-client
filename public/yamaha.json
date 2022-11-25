@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 1,
+        "productName": "Yamaha MT 15 Price",
+        "image": "https://www.banglamotor.net/images/yamaha/yamaha-mt-15-img1.jpg",
+        "price": "427000",
+        "resalePrice": "300000",
+        "usingTime": "6 month",
+        "name": "Roni Hossain",
+        "location": "Pabna",
+        "phone": "01754112230",
+        "date": "26-11-22"
+    },
+    {
+        "_id": 2,
+        "productName": "Yamaha FZS Fi V3 SF",
+        "image": "https://www.banglamotor.net/images/yamaha/yamaha-fzs-fi-v3-abs-img3.jpg",
+        "price": "257000",
+        "resalePrice": "170000",
+        "usingTime": "8 month",
+        "name": "Rohim Hossain",
+        "location": "Dhaka",
+        "phone": "01724112238",
+        "date": "28-11-22"
+    },
+    {
+        "_id": 3,
+        "productName": "Yamaha Saluto 125",
+        "image": "https://www.banglamotor.net/images/yamaha/yamaha-saluto-img02.jpg",
+        "price": "140000",
+        "resalePrice": "100000",
+        "usingTime": "12 month",
+        "name": "Bappy Dawan",
+        "location": "Comilla",
+        "phone": "01744112237",
+        "date": "29-11-22"
+    }
+]
