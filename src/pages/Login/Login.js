@@ -19,7 +19,7 @@ const Login = () => {
 
 
     const handaleLogIn = data => {
-        setLoginError(' ');
+        setLoginError('');
         console.log(data);
         signIn(data.email, data.password)
             .then(result => {

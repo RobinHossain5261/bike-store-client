@@ -1,6 +1,7 @@
 // import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
@@ -9,18 +10,28 @@ const SignUp = () => {
     const [signUpError, setSignUpError] = useState('');
     // const googleProvider = new GoogleAuthProvider();
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
 
     const handalSignUp = data => {
         console.log(data);
-        setSignUpError(' ');
+        setSignUpError('');
 
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                console.log(user);
+                toast("User created successful.")
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(err => console.log(err))
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error)
+                setSignUpError(error.message)
+            })
     }
     return (
         <div className='flex h-[800px] justify-center items-center'>
