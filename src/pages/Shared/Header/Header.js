@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handaleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .then(err => console.log(err))
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -12,7 +20,7 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
-
+                        <li><Link to="/dashboard">Dashboard</Link></li>
 
                     </ul>
                 </div>
@@ -22,11 +30,15 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/blog">Blog</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
 
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn btn-ghost" to='/login'>Login</Link>
+                {
+                    user?.uid ? <Link className="btn" onClick={handaleLogOut}>Log Out</Link>
+                        : <Link className="btn" to='/login'>Login</Link>
+                }
             </div>
         </div>
     );
