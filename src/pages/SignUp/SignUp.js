@@ -13,6 +13,8 @@ const SignUp = () => {
 
     const { createUser, updateUser, providerLogin } = useContext(AuthContext);
 
+    const isVarified = false;
+
     const handalSignUp = data => {
         console.log(data);
         setSignUpError('');
@@ -27,7 +29,10 @@ const SignUp = () => {
                     displayName: data.name
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        // saveUsers(data.name,data.email,data.type,isVarified)
+
+                    })
                     .catch(err => console.log(err))
             })
             .catch(error => {
@@ -90,6 +95,43 @@ const SignUp = () => {
                     {
                         signUpError && <p className='text-red-600'>{signUpError}</p>
                     }
+
+
+                    <div id="select">
+                        <div className="mb-2 block">
+                            <label htmlFor="countries" value="User Type" />
+                        </div>
+                        <select
+                            {...register("type", { required: true })}
+                            id="countries"
+                            required={true}
+                        >
+                            <option value="seller">Seller</option>
+                            <option value="buyer">Buyer</option>
+                        </select>
+                    </div>
+
+
+                    {/* const saveUsers = (name, email, role) => {
+    const user = { name, email, role };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        navigate("/");
+      
+      });
+  }; */}
+
+
+
+
                     <input className='btn btn-primary w-full mt-3' value="Sign Up" type="submit" />
                 </form>
                 <p>Already have an account <Link to='/login' className='text-primary'>Please login</Link></p>
