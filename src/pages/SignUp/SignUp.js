@@ -13,7 +13,7 @@ const SignUp = () => {
 
     const { createUser, updateUser, providerLogin } = useContext(AuthContext);
 
-    const isVarified = false;
+    // const isVarified = false;
 
     const handalSignUp = data => {
         console.log(data);
@@ -31,7 +31,7 @@ const SignUp = () => {
                 updateUser(userInfo)
                     .then(() => {
                         // saveUsers(data.name,data.email,data.type,isVarified)
-
+                        navigate('/');
                     })
                     .catch(err => console.log(err))
             })

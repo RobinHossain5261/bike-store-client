@@ -1,13 +1,25 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import ProductName from './ProductName';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    // const [products, setProducts] = useState([]);
+
+    const { data = [] } = useQuery({
+        queryKey: ['products'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/products');
+            const data = await res.json();
+            return data;
+        }
+    })
+
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/products')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, []);
 
     return (
         <div className='mt-10'>
@@ -15,7 +27,7 @@ const Products = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[800px] mx-auto'>
                 {
 
-                    products?.map(product => <ProductName
+                    data?.map(product => <ProductName
                         key={product._id}
                         product={product}
                     ></ProductName>)
