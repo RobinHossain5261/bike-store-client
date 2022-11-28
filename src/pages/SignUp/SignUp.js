@@ -30,8 +30,8 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        // saveUsers(data.name,data.email,data.type,isVarified)
-                        navigate('/');
+                        saveUsers(data.name, data.email, data.role)
+
                     })
                     .catch(err => console.log(err))
             })
@@ -49,6 +49,25 @@ const SignUp = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const saveUsers = (name, email, role) => {
+        const user = { name, email, role };
+        fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('saveuser', data);
+                navigate("/");
+
+            });
+    };
+
+
     return (
         <div className='flex h-[800px] justify-center items-center'>
             <div className='w-96 p-7'>
@@ -102,7 +121,7 @@ const SignUp = () => {
                             <label htmlFor="countries" value="User Type" />
                         </div>
                         <select
-                            {...register("type", { required: true })}
+                            {...register("role", { required: true })}
                             id="countries"
                             required={true}
                         >
@@ -112,22 +131,6 @@ const SignUp = () => {
                     </div>
 
 
-                    {/* const saveUsers = (name, email, role) => {
-    const user = { name, email, role };
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        navigate("/");
-      
-      });
-  }; */}
 
 
 
