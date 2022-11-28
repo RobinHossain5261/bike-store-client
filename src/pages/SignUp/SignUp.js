@@ -117,13 +117,17 @@ const SignUp = () => {
 
 
                     <div id="select">
-                        <div className="mb-2 block">
+                        <label className="label">
+                            <span className="label-text">Select your role</span>
+                        </label>
+                        <div className=" block">
                             <label htmlFor="countries" value="User Type" />
                         </div>
                         <select
                             {...register("role", { required: true })}
                             id="countries"
                             required={true}
+                            className="input input-bordered w-full"
                         >
                             <option value="seller">Seller</option>
                             <option value="buyer">Buyer</option>
