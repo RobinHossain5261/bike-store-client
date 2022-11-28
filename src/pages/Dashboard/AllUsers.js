@@ -32,14 +32,14 @@ const AllUsers = () => {
                 <h3>Admin</h3>
                 <h3>Delete</h3>
             </div>
-            <table>
+            <div>
                 {
                     users.map((user, i) => <AllSeller
                         key={i}
                         user={user}
                     ></AllSeller>)
                 }
-            </table>
+            </div>
 
 
 

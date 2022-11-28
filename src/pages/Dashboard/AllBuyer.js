@@ -20,14 +20,14 @@ const AllBuyer = () => {
                 <h3>Role</h3>
                 <h3>Delete</h3>
             </div>
-            <table>
+            <div>
                 {
                     users.map((user, i) => <Buyer
                         key={i}
                         user={user}
                     ></Buyer>)
                 }
-            </table>
+            </div>
 
 
 

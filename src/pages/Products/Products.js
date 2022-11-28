@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import ProductName from './ProductName';
 
 const Products = () => {

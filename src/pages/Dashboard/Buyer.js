@@ -2,7 +2,7 @@ import React from 'react';
 
 const Buyer = ({ user }) => {
     return (
-        <tbody>
+        <div>
             {
                 user?.role === 'buyer' &&
                 <tr className=' grid grid-cols-4 justify-between my-2'>
@@ -15,7 +15,7 @@ const Buyer = ({ user }) => {
                     </td>
                 </tr>
             }
-        </tbody>
+        </div>
     );
 };
 
