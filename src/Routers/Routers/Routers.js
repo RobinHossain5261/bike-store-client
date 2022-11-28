@@ -3,6 +3,8 @@ import DashboarLayout from "../../layout/DashboarLayout";
 import Main from "../../layout/Main";
 import ErrorPage from "../../pages/404page/ErrorPage";
 import Blog from "../../pages/Blog/Blog";
+import AllBuyer from "../../pages/Dashboard/AllBuyer";
+import AllUsers from "../../pages/Dashboard/AllUsers";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
 // import CategoryCard from "../../pages/Home/Category/CategoryCard";
@@ -54,6 +56,14 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/sellers',
+                element: <AllUsers></AllUsers>
+            },
+            {
+                path: '/dashboard/buyers',
+                element: <AllBuyer></AllBuyer>
             }
         ]
     },
