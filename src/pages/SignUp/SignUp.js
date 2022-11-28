@@ -9,6 +9,10 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signUpError, setSignUpError] = useState('');
     const googleProvider = new GoogleAuthProvider();
+
+    // const [createdUserEmail, setCreatedUserEmail] = useState('');
+    // const [token] = useToken(createdUserEmail);
+
     const navigate = useNavigate();
 
     const { createUser, updateUser, providerLogin } = useContext(AuthContext);
@@ -61,11 +65,21 @@ const SignUp = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log('saveuser', data);
-                navigate("/");
-
+                // setCreatedUserEmail(email);
+                getUserToken(email);
             });
     };
+
+    const getUserToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('accessToken', data.accessToken);
+                    navigate('/');
+                }
+            })
+    }
 
 
     return (
