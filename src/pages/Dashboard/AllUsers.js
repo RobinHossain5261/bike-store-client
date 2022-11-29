@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-// import React, { useEffect, useState } from 'react';
 import AllSeller from './AllSeller';
 
 const AllUsers = () => {
-    const { data: users = [] } = useQuery({
+    const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/users');
@@ -11,17 +10,6 @@ const AllUsers = () => {
             return data;
         }
     })
-
-    // const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/users')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             // console.log(data);
-    //             setUsers(data);
-    //         })
-    // }, []);
-
 
     return (
         <div>
@@ -37,6 +25,7 @@ const AllUsers = () => {
                     users.map((user, i) => <AllSeller
                         key={i}
                         user={user}
+                        refetch={refetch}
                     ></AllSeller>)
                 }
             </div>

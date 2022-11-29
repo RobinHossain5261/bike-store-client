@@ -17,8 +17,6 @@ const SignUp = () => {
 
     const { createUser, updateUser, providerLogin } = useContext(AuthContext);
 
-    // const isVarified = false;
-
     const handalSignUp = data => {
         console.log(data);
         setSignUpError('');
@@ -48,7 +46,7 @@ const SignUp = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                console.log(user);
                 navigate('/');
             })
             .catch(error => console.error(error))
