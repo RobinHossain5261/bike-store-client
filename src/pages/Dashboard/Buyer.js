@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const Buyer = ({ user, refetch }) => {
+    const [buyers, setBuyers] = useState([]);
+
+    const handaleDelete = id => {
+        const proceed = window.confirm('Are you sure, you want to delete.');
+        if (proceed) {
+            fetch(`http://localhost:5000/users/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        toast.success('Deleted successfully');
+                        const remaining = buyers.filter(odr => odr._id !== id);
+                        setBuyers(remaining);
+                    }
+                })
+        }
+    }
 
     const handleMakeAdmin = id => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
@@ -33,7 +52,7 @@ const Buyer = ({ user, refetch }) => {
                         }
                     </td>
                     <td>
-                        <button className="btn btn-error btn-sm">Delete</button>
+                        <button onClick={() => handaleDelete(user._id)} className="btn btn-error btn-sm">Delete</button>
                     </td>
                 </tr>
             }

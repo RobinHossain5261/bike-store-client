@@ -3,11 +3,10 @@ import DashboarLayout from "../../layout/DashboarLayout";
 import Main from "../../layout/Main";
 import ErrorPage from "../../pages/404page/ErrorPage";
 import Blog from "../../pages/Blog/Blog";
+import AddDoctor from "../../pages/Dashboard/AddDoctor";
 import AllBuyer from "../../pages/Dashboard/AllBuyer";
 import AllUsers from "../../pages/Dashboard/AllUsers";
-import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyOrders from "../../pages/Dashboard/MyOrders";
-// import CategoryCard from "../../pages/Home/Category/CategoryCard";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
 import CategoryProduct from "../../pages/Products/CategoryProduct";
@@ -65,6 +64,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/buyers',
                 element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
+            },
+            {
+                path: '/dashboard/adddoctor',
+                element: <AdminRoute><AddDoctor></AddDoctor></AdminRoute>
             }
         ]
     },
