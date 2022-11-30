@@ -7,7 +7,7 @@ const Buyer = ({ user, refetch }) => {
     const handaleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete.');
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://bike-store-server.vercel.app/users/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -23,7 +23,7 @@ const Buyer = ({ user, refetch }) => {
     }
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://bike-store-server.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

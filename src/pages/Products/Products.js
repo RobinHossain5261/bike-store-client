@@ -8,7 +8,7 @@ const Products = () => {
     const { data = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
+            const res = await fetch('https://bike-store-server.vercel.app/products');
             const data = await res.json();
             return data;
         }
@@ -16,7 +16,7 @@ const Products = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/products')
+    //     fetch('https://bike-store-server.vercel.app/products')
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, []);

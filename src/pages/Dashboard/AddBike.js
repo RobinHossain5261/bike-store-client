@@ -16,7 +16,7 @@ const AddBike = () => {
     const { data: categories } = useQuery({
         queryKey: ['productCategory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/productCategory');
+            const res = await fetch('https://bike-store-server.vercel.app/productCategory');
             const data = await res.json();
             return data;
         }
@@ -53,7 +53,7 @@ const AddBike = () => {
                     }
 
                     //save product information to the database
-                    fetch('http://localhost:5000/myproducts', {
+                    fetch('https://bike-store-server.vercel.app/myproducts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
