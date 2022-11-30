@@ -146,11 +146,6 @@ const SignUp = () => {
                         </select>
                     </div>
 
-
-
-
-
-
                     <input className='btn btn-primary w-full mt-3' value="Sign Up" type="submit" />
                 </form>
                 <p>Already have an account <Link to='/login' className='text-primary'>Please login</Link></p>

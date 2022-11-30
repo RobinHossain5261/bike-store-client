@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const MyOrders = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
@@ -19,6 +19,10 @@ const MyOrders = () => {
             return data;
         }
     })
+
+    if (loading) {
+        return <progress className="progress w-56"></progress>
+    }
 
     return (
         <div>
@@ -37,7 +41,8 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            bookings.map((booking, i) =>
+                            bookings &&
+                            bookings?.map((booking, i) =>
                                 <tr key={i}>
                                     <td>
                                         <div className="flex items-center space-x-3">

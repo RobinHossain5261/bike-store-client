@@ -3,14 +3,14 @@ import DashboarLayout from "../../layout/DashboarLayout";
 import Main from "../../layout/Main";
 import ErrorPage from "../../pages/404page/ErrorPage";
 import Blog from "../../pages/Blog/Blog";
-import AddDoctor from "../../pages/Dashboard/AddDoctor";
+import AddBike from "../../pages/Dashboard/AddBike";
 import AllBuyer from "../../pages/Dashboard/AllBuyer";
 import AllUsers from "../../pages/Dashboard/AllUsers";
 import MyOrders from "../../pages/Dashboard/MyOrders";
+import MyProduct from "../../pages/Dashboard/MyProduct";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
 import CategoryProduct from "../../pages/Products/CategoryProduct";
-import Products from "../../pages/Products/Products";
 import SignUp from "../../pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -38,10 +38,6 @@ export const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             },
             {
-                path: '/products',
-                element: <Products></Products>
-            },
-            {
                 path: '/products/:id',
                 element: <PrivateRoute><CategoryProduct></CategoryProduct></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
@@ -66,8 +62,12 @@ export const router = createBrowserRouter([
                 element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
             },
             {
-                path: '/dashboard/adddoctor',
-                element: <AdminRoute><AddDoctor></AddDoctor></AdminRoute>
+                path: '/dashboard/addproduct',
+                element: <AdminRoute><AddBike></AddBike></AdminRoute>
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <MyProduct></MyProduct>
             }
         ]
     },
