@@ -23,7 +23,7 @@ const AddBike = () => {
     })
 
     const handleAddProduct = data => {
-        // console.log(data.image[0].lastModifiedDate)
+
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -35,7 +35,7 @@ const AddBike = () => {
             .then(res => res.json())
             .then(imgData => {
                 if (imgData.success) {
-                    console.log(imgData.data.url)
+
                     const product = {
                         name: data.name,
                         email: data.email,
@@ -77,7 +77,7 @@ const AddBike = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">Add A Product</h1>
+            <h1 className="text-3xl font-bold mb-5">Add Your Product</h1>
             <form onSubmit={handleSubmit(handleAddProduct)}
                 className="lg:w-[650px] border border-gray-400 rounded-xl p-8"
             >

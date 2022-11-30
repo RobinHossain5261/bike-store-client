@@ -1,10 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+import ConfirmationModal from '../Shared/ConfirmationModal/ConfirmationModal';
 
 
 const MyProduct = () => {
+    const [deleteProduct, setDeleteProduct] = useState(null);
 
-    const { data: products = [] } = useQuery({
+    const closeModal = () => {
+        setDeleteProduct(null);
+    }
+
+    const { data: products = [], refetch } = useQuery({
         queryKey: ['myproducts'],
         queryFn: async () => {
             try {
@@ -23,13 +30,31 @@ const MyProduct = () => {
         }
     })
 
+    const handleDeleteProduct = product => {
+        fetch(`http://localhost:5000/myproducts/${product._id}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    refetch();
+                    toast.success(`${product.productName} delete successfully.`)
+                }
+            })
+    }
+
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">My Product: {products.length}</h1>
+            <h1 className="text-3xl font-bold mb-5">My Product</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10'>
                 {
                     products?.map(product =>
-                        <div className="card  bg-base-100 shadow-xl">
+                        <div
+                            key={product._id}
+                            className="card  bg-base-100 shadow-xl">
                             <figure><img src={product.image} alt="honda" /></figure>
                             <div className="card-body">
                                 <h2 className="text-4xl font-semibold">{product.productName}</h2>
@@ -43,12 +68,22 @@ const MyProduct = () => {
                                 <p>Location: {product.location}</p>
                                 <p>Phone: {product.phone}</p>
                                 <button className="btn btn-secondary mt-3">available</button>
-                                <button className="btn btn-error">Delete</button>
+
+                                <label onClick={() => setDeleteProduct(product)} htmlFor="confirmation-modal" className="btn  btn-error">Delete</label>
                             </div>
                         </div>
                     )
                 }
             </div>
+            {
+                deleteProduct && <ConfirmationModal
+                    title={'Are you sure you want to delete.'}
+                    message={`If you delete ${deleteProduct.productName}. It can not be undone.`}
+                    successAction={handleDeleteProduct}
+                    modalData={deleteProduct}
+                    closeModal={closeModal}
+                ></ConfirmationModal>
+            }
         </div>
     );
 };

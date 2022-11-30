@@ -24,7 +24,10 @@ const Header = () => {
                             user?.uid ? <div>
                                 <li><Link to="/dashboard">Dashboard</Link></li>
                                 <Link className="btn ml-3" onClick={handaleLogOut}>Log Out</Link></div>
-                                : <Link className="btn" to='/login'>Login</Link>
+                                : <>
+                                    <Link className="btn" to='/login'>Login</Link>
+                                    <Link className="btn mt-3" to='/signup'>Sign Up</Link>
+                                </>
                         }
                     </ul>
                 </div>
@@ -38,7 +41,10 @@ const Header = () => {
                         user?.uid ? <div className="menu menu-horizontal p-0">
                             <li><Link to="/dashboard">Dashboard</Link></li>
                             <Link className="btn ml-3" onClick={handaleLogOut}>Log Out</Link></div>
-                            : <Link className="btn" to='/login'>Login</Link>
+                            : <>
+                                <Link className="btn" to='/login'>Login</Link>
+                                <Link className="btn ml-3" to='/signup'>Sign Up</Link>
+                            </>
                     }
                 </ul>
             </div>
