@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../hooks/useToken';
+import frame from '../../images/Frame.png';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -53,9 +54,10 @@ const Login = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='flex h-[800px] justify-center items-center'>
-            <div className='w-96 p-7'>
-                <h2 className='text-3xl font-bold text-center'>Login</h2>
+
+        <div className='flex justify-center items-center min-h-screen'>
+            <div className='w-96 py-7 px-10 bg-white rounded-xl shadow-xl'>
+                <h2 className='text-3xl font-bold text-center'>Please Login</h2>
                 <form onSubmit={handleSubmit(handaleLogIn)}>
 
                     <div className="form-control w-full">
@@ -88,13 +90,15 @@ const Login = () => {
                     {
                         loginError && <p className='text-red-600'>{loginError}</p>
                     }
-                    <input className='btn btn-primary w-full' value="Log In" type="submit" />
+                    <input className='btn btn-primary w-full mb-3' value="Log In" type="submit" />
                 </form>
-                <p>New to Bike-store? <Link to='/signup' className='text-primary'>Create new account</Link></p>
-                <div className="divider">OR</div>
-                <button onClick={handaleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                <p>New to Bike-store? <Link to='/signup' className='text-primary font-semibold'>Create new account</Link></p>
+                {/* <div className="divider">OR</div>
+                        <button onClick={handaleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button> */}
             </div>
         </div>
+
+
     );
 };
 

@@ -38,7 +38,7 @@ const Alluser = ({ user, refetch }) => {
             })
     }
     return (
-        <div >
+        <div>
             {
                 user?.role === 'seller' &&
                 <tr className=' grid grid-cols-4 justify-between my-2'>

@@ -9,7 +9,6 @@ const Banner = () => {
                 <div className='max-w-screen-md	'>
                     <h1 className="mb-5 text-5xl font-bold">Your National Online Pre-Owned Motorcycle Dealership</h1>
                     <p className="mb-5">Whether you are looking for an upgrade or ready to sell, Used Motorcycle Store is your one-stop-shop for all things two-wheeled! Simply click Cash Offer below, provide your motorcycle details, and get a cash offer in less than 24 hours, shipping included. It’s that easy!</p>
-                    <button className="btn btn-goast btn-outline">Buy Now</button>
                 </div>
             </div>
         </div>

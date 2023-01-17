@@ -5,7 +5,7 @@ import { router } from './Routers/Routers/Routers';
 
 function App() {
   return (
-    <div className='max-w-screen-xl	mx-auto'>
+    <div className='bg-[#EEF2F8] lg:w-[95%] mx-auto'>
       <RouterProvider router={router}></RouterProvider>
       <Toaster></Toaster>
     </div>

@@ -26,8 +26,8 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">My Orders</h1>
-            <div className="overflow-x-auto w-full">
+            <h1 className="text-3xl font-bold my-5">My Orders</h1>
+            <div className="overflow-x-auto lg:w-5/6 mx-auto">
                 <table className="table w-full">
 
                     <thead>
@@ -48,11 +48,11 @@ const MyOrders = () => {
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
                                                 <div className="mask rounded-xl w-24 h-24">
-                                                    <img src={booking.image} alt="honda" />
+                                                    <img src={booking?.image} alt="honda" />
                                                 </div>
                                             </div>
                                             <div>
-                                                <div className="font-bold">{booking.bike}</div>
+                                                <div className="font-bold">{booking?.bike}</div>
 
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@ const MyOrders = () => {
                                     <td>
                                         {user?.email}
                                     </td>
-                                    <td className='text-green-500'>{booking.price}</td>
+                                    <td className='text-green-500'>{booking?.price}</td>
                                     <th>
                                         <button className="btn btn-ghost btn-sm">pay</button>
                                     </th>

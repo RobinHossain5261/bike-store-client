@@ -4,10 +4,10 @@ import pic from '../../images/404-pages.jpg';
 
 const ErrorPage = () => {
     return (
-        <div className='text-center mt-16'>
-            <h1 className='text-3xl font-semibold'>This Route not found</h1>
-            <img src={pic} alt="" />
-            <Link className='text-green-500' to='/'>Go to home</Link>
+        <div className='text-center'>
+            <h1 className='text-3xl font-semibold py-4'>This Route not found</h1>
+            <img className='w-full' src={pic} alt="404 page" />
+            <Link className='bg-green-500 text-white font-bold p-3 rounded-xl' to='/'>Go to home</Link>
         </div>
     );
 };

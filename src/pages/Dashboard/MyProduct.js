@@ -48,7 +48,7 @@ const MyProduct = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">My Product</h1>
+            <h1 className="text-3xl font-bold my-5">My Product</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10'>
                 {
                     products?.map(product =>
@@ -67,7 +67,12 @@ const MyProduct = () => {
                                 <p className='font-semibold'>Name: {product.name}</p>
                                 <p>Location: {product.location}</p>
                                 <p>Phone: {product.phone}</p>
+
+
+
                                 <button className="btn btn-secondary mt-3">available</button>
+
+
 
                                 <label onClick={() => setDeleteProduct(product)} htmlFor="confirmation-modal" className="btn  btn-error">Delete</label>
                             </div>

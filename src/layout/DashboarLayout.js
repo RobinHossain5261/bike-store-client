@@ -17,24 +17,24 @@ const DashboarLayout = () => {
                 <div className="drawer-content">
                     <Outlet></Outlet>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side sticky top-6 mr-5">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80  text-base-content">
+                    <ul className="menu p-4 w-80 bg-white font-bold text-lg text-base-content">
 
-                        <li><Link to='/dashboard'>My Orders</Link></li>
+                        <li className='hover:ml-5 hover:text-green-600'><Link to='/dashboard'>My Orders</Link></li>
                         {
                             isAdmin &&
                             <>
-                                <li><Link to='/dashboard/sellers'>All Sellers</Link></li>
-                                <li><Link to='/dashboard/buyers'>All Buyers</Link></li>
+                                <li className='hover:ml-5 hover:text-green-600'><Link to='/dashboard/sellers'>All Sellers</Link></li>
+                                <li className='hover:ml-5 hover:text-green-600'><Link to='/dashboard/buyers'>All Buyers</Link></li>
 
                             </>
                         }
                         {
                             isSeller &&
                             <>
-                                <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
-                                <li><Link to='/dashboard/myproduct'>My Product</Link></li>
+                                <li className='hover:ml-5 hover:text-green-600'><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                                <li className='hover:ml-5 hover:text-green-600'><Link to='/dashboard/myproduct'>My Product</Link></li>
                             </>
                         }
 

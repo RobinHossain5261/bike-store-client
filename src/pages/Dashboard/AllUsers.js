@@ -13,7 +13,7 @@ const AllUsers = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">All Seller</h1>
+            <h1 className="text-3xl font-bold my-5">All Seller</h1>
             <div className=' grid grid-cols-4 justify-between my-2 text-2xl font-semibold bg-gray-300 p-3'>
                 <h3>Name</h3>
                 <h3>Email</h3>

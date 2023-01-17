@@ -23,8 +23,8 @@ const Products = () => {
 
     return (
         <div className='mt-10'>
-            <h1 className="text-5xl font-bold mb-10 text-center">Category</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[800px] mx-auto'>
+            <h1 className="text-5xl font-bold mb-10 text-center">Our Product Categories</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-[800px] mx-auto'>
                 {
 
                     data?.map(product => <ProductName

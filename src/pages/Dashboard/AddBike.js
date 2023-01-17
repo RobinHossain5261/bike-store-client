@@ -77,9 +77,9 @@ const AddBike = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5">Add Your Product</h1>
+            <h1 className="text-3xl font-bold my-5">Add Your Product</h1>
             <form onSubmit={handleSubmit(handleAddProduct)}
-                className="lg:w-[650px] border border-gray-400 rounded-xl p-8"
+                className="lg:w-[650px] border border-gray-400 rounded-xl p-8 mx-auto"
             >
 
                 <div className='grid grid-cols-1 gap-x-5 lg:grid-cols-2'>
